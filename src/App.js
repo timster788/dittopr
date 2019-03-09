@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import * as Survey from "survey-react";
-import "survey-react/survey.css";
-import SurveyEditor from "./SurveyEditor";
-import logo from "./logo.svg";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
+import React, { Component } from 'react';
+import * as Survey from 'survey-react';
+import 'survey-react/survey.css';
+// import SurveyEditor from "./SurveyEditor";
+import logo from './logo.svg';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
-import "jquery-ui/themes/base/all.css";
-import "nouislider/distribute/nouislider.css";
-import "select2/dist/css/select2.css";
-import "bootstrap-slider/dist/css/bootstrap-slider.css";
+import 'jquery-ui/themes/base/all.css';
+import 'nouislider/distribute/nouislider.css';
+import 'select2/dist/css/select2.css';
+import 'bootstrap-slider/dist/css/bootstrap-slider.css';
 
-import "jquery-bar-rating/dist/themes/css-stars.css";
+import 'jquery-bar-rating/dist/themes/css-stars.css';
 
-import $ from "jquery";
-import "jquery-ui/ui/widgets/datepicker.js";
-import "select2/dist/js/select2.js";
-import "jquery-bar-rating";
+import $ from 'jquery';
+import 'jquery-ui/ui/widgets/datepicker.js';
+import 'select2/dist/js/select2.js';
+import 'jquery-bar-rating';
 
-import * as widgets from "surveyjs-widgets";
+import * as widgets from 'surveyjs-widgets';
 
 widgets.icheck(Survey, $);
 widgets.select2(Survey, $);
@@ -35,77 +35,77 @@ widgets.bootstrapslider(Survey);
 
 class App extends Component {
   json = {
-    title: "Product Feedback Survey Example",
-    showProgressBar: "top",
+    title: 'Product Feedback Survey Example',
+    showProgressBar: 'top',
     pages: [
       {
         elements: [
           {
-            type: "barrating",
-            name: "barrating1",
-            ratingTheme: "css-stars",
+            type: 'barrating',
+            name: 'barrating1',
+            ratingTheme: 'css-stars',
             title: "Please rate the movie you've just watched",
-            choices: ["1", "2", "3", "4", "5"]
+            choices: ['1', '2', '3', '4', '5']
           },
           {
-            type: "imagepicker",
-            name: "choosepicture",
-            title: "What animal would you like to see first ?",
+            type: 'imagepicker',
+            name: 'choosepicture',
+            title: 'What animal would you like to see first ?',
             choices: [
               {
-                value: "lion",
+                value: 'lion',
                 imageLink:
-                  "https://surveyjs.io/Content/Images/examples/image-picker/lion.jpg"
+                  'https://surveyjs.io/Content/Images/examples/image-picker/lion.jpg'
               },
               {
-                value: "giraffe",
+                value: 'giraffe',
                 imageLink:
-                  "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg"
+                  'https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg'
               },
               {
-                value: "panda",
+                value: 'panda',
                 imageLink:
-                  "https://surveyjs.io/Content/Images/examples/image-picker/panda.jpg"
+                  'https://surveyjs.io/Content/Images/examples/image-picker/panda.jpg'
               },
               {
-                value: "camel",
+                value: 'camel',
                 imageLink:
-                  "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg"
+                  'https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg'
               }
             ]
           },
           {
-            type: "bootstrapslider",
-            name: "bootstrapslider"
+            type: 'bootstrapslider',
+            name: 'bootstrapslider'
           },
           {
-            type: "dropdown",
-            renderAs: "select2",
+            type: 'dropdown',
+            renderAs: 'select2',
             choicesByUrl: {
-              url: "https://restcountries.eu/rest/v1/all"
+              url: 'https://restcountries.eu/rest/v1/all'
             },
-            name: "countries",
-            title: "Please select the country you have arrived from:"
+            name: 'countries',
+            title: 'Please select the country you have arrived from:'
           },
           {
-            type: "signaturepad",
-            name: "sign",
-            title: "Please enter your signature"
+            type: 'signaturepad',
+            name: 'sign',
+            title: 'Please enter your signature'
           },
           {
-            type: "sortablelist",
-            name: "lifepriopity",
-            title: "Life Priorities ",
+            type: 'sortablelist',
+            name: 'lifepriopity',
+            title: 'Life Priorities ',
             isRequired: true,
             colCount: 0,
-            choices: ["family", "work", "pets", "travels", "games"]
+            choices: ['family', 'work', 'pets', 'travels', 'games']
           },
           {
-            name: "date",
-            type: "datepicker",
-            inputType: "date",
-            title: "Your favorite date:",
-            dateFormat: "mm/dd/yy",
+            name: 'date',
+            type: 'datepicker',
+            inputType: 'date',
+            title: 'Your favorite date:',
+            dateFormat: 'mm/dd/yy',
             isRequired: true
           }
         ]
@@ -113,114 +113,114 @@ class App extends Component {
       {
         questions: [
           {
-            type: "signaturepad",
-            width: "500px",
-            name: "Signature Pad - you can enter your signature here:"
+            type: 'signaturepad',
+            width: '500px',
+            name: 'Signature Pad - you can enter your signature here:'
           },
           {
-            type: "matrix",
-            name: "Quality",
+            type: 'matrix',
+            name: 'Quality',
             title:
-              "Please indicate if you agree or disagree with the following statements",
+              'Please indicate if you agree or disagree with the following statements',
             columns: [
               {
                 value: 1,
-                text: "Strongly Disagree"
+                text: 'Strongly Disagree'
               },
               {
                 value: 2,
-                text: "Disagree"
+                text: 'Disagree'
               },
               {
                 value: 3,
-                text: "Neutral"
+                text: 'Neutral'
               },
               {
                 value: 4,
-                text: "Agree"
+                text: 'Agree'
               },
               {
                 value: 5,
-                text: "Strongly Agree"
+                text: 'Strongly Agree'
               }
             ],
             rows: [
               {
-                value: "affordable",
-                text: "Product is affordable"
+                value: 'affordable',
+                text: 'Product is affordable'
               },
               {
-                value: "does what it claims",
-                text: "Product does what it claims"
+                value: 'does what it claims',
+                text: 'Product does what it claims'
               },
               {
-                value: "better then others",
-                text: "Product is better than other products on the market"
+                value: 'better then others',
+                text: 'Product is better than other products on the market'
               },
               {
-                value: "easy to use",
-                text: "Product is easy to use"
+                value: 'easy to use',
+                text: 'Product is easy to use'
               }
             ]
           },
           {
-            type: "rating",
-            name: "satisfaction",
-            title: "How satisfied are you with the Product?",
-            mininumRateDescription: "Not Satisfied",
-            maximumRateDescription: "Completely satisfied"
+            type: 'rating',
+            name: 'satisfaction',
+            title: 'How satisfied are you with the Product?',
+            mininumRateDescription: 'Not Satisfied',
+            maximumRateDescription: 'Completely satisfied'
           },
           {
-            type: "rating",
-            name: "recommend friends",
-            visibleIf: "{satisfaction} > 3",
+            type: 'rating',
+            name: 'recommend friends',
+            visibleIf: '{satisfaction} > 3',
             title:
-              "How likely are you to recommend the Product to a friend or co-worker?",
-            mininumRateDescription: "Will not recommend",
-            maximumRateDescription: "I will recommend"
+              'How likely are you to recommend the Product to a friend or co-worker?',
+            mininumRateDescription: 'Will not recommend',
+            maximumRateDescription: 'I will recommend'
           },
           {
-            type: "comment",
-            name: "suggestions",
-            title: "What would make you more satisfied with the Product?"
+            type: 'comment',
+            name: 'suggestions',
+            title: 'What would make you more satisfied with the Product?'
           }
         ]
       },
       {
         questions: [
           {
-            type: "radiogroup",
-            name: "price to competitors",
-            title: "Compared to our competitors, do you feel the Product is",
+            type: 'radiogroup',
+            name: 'price to competitors',
+            title: 'Compared to our competitors, do you feel the Product is',
             choices: [
-              "Less expensive",
-              "Priced about the same",
-              "More expensive",
-              "Not sure"
+              'Less expensive',
+              'Priced about the same',
+              'More expensive',
+              'Not sure'
             ]
           },
           {
-            type: "radiogroup",
-            name: "price",
-            title: "Do you feel our current price is merited by our product?",
+            type: 'radiogroup',
+            name: 'price',
+            title: 'Do you feel our current price is merited by our product?',
             choices: [
-              "correct|Yes, the price is about right",
-              "low|No, the price is too low for your product",
-              "high|No, the price is too high for your product"
+              'correct|Yes, the price is about right',
+              'low|No, the price is too low for your product',
+              'high|No, the price is too high for your product'
             ]
           },
           {
-            type: "multipletext",
-            name: "pricelimit",
-            title: "What is the... ",
+            type: 'multipletext',
+            name: 'pricelimit',
+            title: 'What is the... ',
             items: [
               {
-                name: "mostamount",
-                title: "Most amount you would every pay for a product like ours"
+                name: 'mostamount',
+                title: 'Most amount you would every pay for a product like ours'
               },
               {
-                name: "leastamount",
-                title: "The least amount you would feel comfortable paying"
+                name: 'leastamount',
+                title: 'The least amount you would feel comfortable paying'
               }
             ]
           }
@@ -229,8 +229,8 @@ class App extends Component {
       {
         questions: [
           {
-            type: "text",
-            name: "email",
+            type: 'text',
+            name: 'email',
             title:
               'Thank you for taking our survey. Please enter your email address, then press the "Submit" button.'
           }
@@ -240,20 +240,20 @@ class App extends Component {
   };
 
   componentWillMount() {
-    import("icheck");
-    window["$"] = window["jQuery"] = $;
+    import('icheck');
+    window['$'] = window['jQuery'] = $;
   }
 
   onValueChanged(result) {
-    console.log("value changed!");
+    console.log('value changed!');
   }
 
   onComplete(result) {
-    console.log("Complete! " + result);
+    console.log('Complete! ' + result);
   }
 
   render() {
-    Survey.Survey.cssType = "bootstrap";
+    Survey.Survey.cssType = 'bootstrap';
     var model = new Survey.Model(this.json);
     return (
       <div className="App">
@@ -270,12 +270,9 @@ class App extends Component {
             onValueChanged={this.onValueChanged}
           />
           {/*If you want to show survey editor, uncomment the line below*/}
-          <h1>SurveyJS Editor in action:</h1>
-          <SurveyEditor />
+          {/* <h1>SurveyJS Editor in action:</h1>
+          <SurveyEditor /> */}
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
