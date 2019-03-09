@@ -50,65 +50,50 @@ class App extends Component {
             isRequired: true
           },
           {
-            type: 'imagepicker',
-            name: 'choosepicture',
-            title: 'What animal would you like to see first ?',
+            name: 'funding',
+            type: 'text',
+            title: 'How much funding have you raised?',
+            // placeHolder: 'Jon Snow',
+            isRequired: true
+          },
+
+          // {
+          //   type: 'dropdown',
+          //   renderAs: 'select2',
+          //   choicesByUrl: {
+          //     url: 'https://restcountries.eu/rest/v1/all'
+          //   },
+          //   name: 'countries',
+          //   title: 'Please select the country you have arrived from:'
+          // },
+          {
+            name: 'messaging',
+            type: 'text',
+            title: 'What messaging do you currently have in place?',
+            // placeHolder: 'Jon Snow',
+            isRequired: true
+          },
+          {
+            type: 'checkbox',
+            name: 'communication',
+            title: 'What are your communications needs?',
+            isRequired: true,
+            colCount: 1,
             choices: [
-              {
-                value: 'lion',
-                imageLink:
-                  'https://surveyjs.io/Content/Images/examples/image-picker/lion.jpg'
-              },
-              {
-                value: 'giraffe',
-                imageLink:
-                  'https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg'
-              },
-              {
-                value: 'panda',
-                imageLink:
-                  'https://surveyjs.io/Content/Images/examples/image-picker/panda.jpg'
-              },
-              {
-                value: 'camel',
-                imageLink:
-                  'https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg'
-              }
+              'Media Relations',
+              'Content Development',
+              'Messaging',
+              'Social/Digital Marketing',
+              'Crisis'
             ]
           },
           {
-            type: 'bootstrapslider',
-            name: 'bootstrapslider'
-          },
-          {
-            type: 'dropdown',
-            renderAs: 'select2',
-            choicesByUrl: {
-              url: 'https://restcountries.eu/rest/v1/all'
-            },
-            name: 'countries',
-            title: 'Please select the country you have arrived from:'
-          },
-          {
-            type: 'signaturepad',
-            name: 'sign',
-            title: 'Please enter your signature'
-          },
-          {
-            type: 'sortablelist',
-            name: 'lifepriopity',
-            title: 'Life Priorities ',
+            type: 'checkbox',
+            name: 'publication types',
+            title: 'What publication types are important to your company?',
             isRequired: true,
-            colCount: 0,
-            choices: ['family', 'work', 'pets', 'travels', 'games']
-          },
-          {
-            name: 'date',
-            type: 'datepicker',
-            inputType: 'date',
-            title: 'Your favorite date:',
-            dateFormat: 'mm/dd/yy',
-            isRequired: true
+            colCount: 1,
+            choices: ['Mainstream', 'Trade', 'Local', 'National']
           }
         ]
       },
