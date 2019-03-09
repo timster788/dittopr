@@ -41,11 +41,13 @@ class App extends Component {
       {
         elements: [
           {
-            type: 'barrating',
-            name: 'barrating1',
-            ratingTheme: 'css-stars',
-            title: "Please rate the movie you've just watched",
-            choices: ['1', '2', '3', '4', '5']
+            type: 'datepicker',
+            name: 'companybirth',
+            inputType: 'date',
+            title: 'When was your company founded?',
+            dateFormat: 'mm/dd/yy',
+
+            isRequired: true
           },
           {
             type: 'imagepicker',
