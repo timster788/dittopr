@@ -35,6 +35,7 @@ widgets.bootstrapslider(Survey);
 
 class App extends Component {
   json = {
+    surveyPostId: '3730bb25-10c4-47b7-96a6-5ceb3e03b52a',
     title: 'Product Feedback Survey Example',
     showProgressBar: 'top',
     pages: [
@@ -182,7 +183,8 @@ class App extends Component {
   }
 
   onComplete(result) {
-    console.log('Complete! ' + result);
+    document.querySelector('#surveyResult').innerHTML =
+      'result: ' + JSON.stringify(result.data);
   }
 
   render() {
@@ -202,6 +204,7 @@ class App extends Component {
             onComplete={this.onComplete}
             onValueChanged={this.onValueChanged}
           />
+          <div id="surveyResult" />
           {/*If you want to show survey editor, uncomment the line below*/}
           {/* <h1>SurveyJS Editor in action:</h1>
           <SurveyEditor /> */}
