@@ -68,7 +68,7 @@ class App extends Component {
           // },
           {
             name: 'messaging',
-            type: 'text',
+            type: 'comment',
             title: 'What messaging do you currently have in place?',
             // placeHolder: 'Jon Snow',
             isRequired: true
@@ -100,62 +100,27 @@ class App extends Component {
       {
         questions: [
           {
-            type: 'signaturepad',
-            width: '500px',
-            name: 'Signature Pad - you can enter your signature here:'
+            type: 'file',
+            title: 'What is your company’s logo?',
+            name: 'image',
+            storeDataAsText: false,
+            showPreview: true,
+            imageWidth: 150,
+            maxSize: 102400
           },
           {
-            type: 'matrix',
-            name: 'Quality',
-            title:
-              'Please indicate if you agree or disagree with the following statements',
-            columns: [
-              {
-                value: 1,
-                text: 'Strongly Disagree'
-              },
-              {
-                value: 2,
-                text: 'Disagree'
-              },
-              {
-                value: 3,
-                text: 'Neutral'
-              },
-              {
-                value: 4,
-                text: 'Agree'
-              },
-              {
-                value: 5,
-                text: 'Strongly Agree'
-              }
-            ],
-            rows: [
-              {
-                value: 'affordable',
-                text: 'Product is affordable'
-              },
-              {
-                value: 'does what it claims',
-                text: 'Product does what it claims'
-              },
-              {
-                value: 'better then others',
-                text: 'Product is better than other products on the market'
-              },
-              {
-                value: 'easy to use',
-                text: 'Product is easy to use'
-              }
-            ]
+            name: 'messaging',
+            type: 'comment',
+            title: 'What type of news coverage have you received in the past?',
+
+            isRequired: true
           },
           {
-            type: 'rating',
-            name: 'satisfaction',
-            title: 'How satisfied are you with the Product?',
-            mininumRateDescription: 'Not Satisfied',
-            maximumRateDescription: 'Completely satisfied'
+            name: 'messaging',
+            type: 'comment',
+            title: 'What keeps you up at night?',
+
+            isRequired: true
           },
           {
             type: 'rating',
@@ -169,7 +134,8 @@ class App extends Component {
           {
             type: 'comment',
             name: 'suggestions',
-            title: 'What would make you more satisfied with the Product?'
+            title:
+              'What makes your product or your company different from your competitors?'
           }
         ]
       },
