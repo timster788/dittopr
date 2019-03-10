@@ -109,14 +109,14 @@ class App extends Component {
             maxSize: 102400
           },
           {
-            name: 'messaging',
+            name: 'news coverage',
             type: 'comment',
             title: 'What type of news coverage have you received in the past?',
 
             isRequired: true
           },
           {
-            name: 'messaging',
+            name: 'what keeps you up',
             type: 'comment',
             title: 'What keeps you up at night?',
 
