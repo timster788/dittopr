@@ -20,6 +20,11 @@ import 'jquery-bar-rating';
 
 import * as widgets from 'surveyjs-widgets';
 
+import JSONPretty from 'react-json-pretty';
+
+const JSONPrettyMon = require('react-json-pretty/dist/monikai');
+const CircularJSON = require('circular-json');
+
 widgets.icheck(Survey, $);
 widgets.select2(Survey, $);
 widgets.inputmask(Survey);
@@ -36,14 +41,14 @@ widgets.bootstrapslider(Survey);
 class App extends Component {
   json = {
     surveyPostId: '3730bb25-10c4-47b7-96a6-5ceb3e03b52a',
-    title: 'Product Feedback Survey Example',
+
     showProgressBar: 'top',
     pages: [
       {
         elements: [
           {
             type: 'datepicker',
-            name: 'companybirth',
+            name: 'When was your company founded?',
             inputType: 'date',
             title: 'When was your company founded?',
             dateFormat: 'mm/dd/yy',
@@ -51,7 +56,7 @@ class App extends Component {
             isRequired: true
           },
           {
-            name: 'funding',
+            name: 'How much funding have you raised?',
             type: 'text',
             title: 'How much funding have you raised?',
             // placeHolder: 'Jon Snow',
@@ -68,7 +73,7 @@ class App extends Component {
           //   title: 'Please select the country you have arrived from:'
           // },
           {
-            name: 'messaging',
+            name: 'What messaging do you currently have in place?',
             type: 'comment',
             title: 'What messaging do you currently have in place?',
             // placeHolder: 'Jon Snow',
@@ -76,7 +81,7 @@ class App extends Component {
           },
           {
             type: 'checkbox',
-            name: 'communication',
+            name: 'What are your communications needs?',
             title: 'What are your communications needs?',
             isRequired: true,
             colCount: 1,
@@ -90,7 +95,7 @@ class App extends Component {
           },
           {
             type: 'checkbox',
-            name: 'publication types',
+            name: 'What publication types are important to your company?',
             title: 'What publication types are important to your company?',
             isRequired: true,
             colCount: 1,
@@ -103,21 +108,21 @@ class App extends Component {
           {
             type: 'file',
             title: 'What is your company’s logo?',
-            name: 'image',
+            name: 'What is your company’s logo?',
             storeDataAsText: false,
             showPreview: true,
             imageWidth: 150,
             maxSize: 102400
           },
           {
-            name: 'news coverage',
+            name: 'What type of news coverage have you received in the past?',
             type: 'comment',
             title: 'What type of news coverage have you received in the past?',
 
             isRequired: true
           },
           {
-            name: 'what keeps you up',
+            name: 'What keeps you up at night?',
             type: 'comment',
             title: 'What keeps you up at night?',
 
@@ -125,12 +130,13 @@ class App extends Component {
           },
           {
             type: 'comment',
-            name: 'Greatest Challenge',
+            name: 'What is Your Greatest Current Challenge?',
             title: 'What is Your Greatest Current Challenge?'
           },
           {
             type: 'comment',
-            name: 'suggestions',
+            name:
+              'What makes your product or your company different from your competitors?',
             title:
               'What makes your product or your company different from your competitors?'
           }
@@ -140,22 +146,22 @@ class App extends Component {
         questions: [
           {
             type: 'comment',
-            name: 'How you do you see us helping you ',
+            name: 'How Do You See Us Helping You? ',
             title: 'How Do You See Us Helping You?'
           },
           {
             type: 'comment',
-            name: 'results',
+            name: 'What Results Are You Expecting?',
             title: 'What Results Are You Expecting?'
           },
           {
             type: 'comment',
-            name: 'goals',
+            name: 'What is Your Ultimate Goal for Your Business?',
             title: 'What is Your Ultimate Goal for Your Business?'
           },
           {
             type: 'comment',
-            name: 'success',
+            name: 'What would you consider a success or what is the goal?',
             title: 'What would you consider a success or what is the goal?'
           }
         ]
@@ -166,7 +172,7 @@ class App extends Component {
             type: 'text',
             name: 'email',
             title:
-              'Thank you for taking our survey. Please enter your email address, then press the "Submit" button.'
+              'Thank you for completing our questionaire. Please enter your email address, then press the "Complete" button.'
           }
         ]
       }
@@ -184,7 +190,8 @@ class App extends Component {
 
   onComplete(result) {
     document.querySelector('#surveyResult').innerHTML =
-      'result: ' + JSON.stringify(result.data);
+      'result: ' + JSON.stringify(result.data, null, '\t');
+    // console.log('Complete! ' + result);
   }
 
   render() {
@@ -193,21 +200,19 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React with SurveyJS</h2>
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          {/* <h2>Ditto PR Onboarding</h2> */}
         </div>
         <div className="surveyjs">
           {/*If you want to show survey, uncomment the line below*/}
-          <h1>SurveyJS library in action:</h1>
+          <h1>Ditto PR Onboarding</h1>
           <Survey.Survey
             model={model}
             onComplete={this.onComplete}
             onValueChanged={this.onValueChanged}
           />
+
           <div id="surveyResult" />
-          {/*If you want to show survey editor, uncomment the line below*/}
-          {/* <h1>SurveyJS Editor in action:</h1>
-          <SurveyEditor /> */}
         </div>
       </div>
     );
